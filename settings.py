@@ -1,0 +1,10 @@
+AVAILABLE_CURRENCIES = ('CZK', 'EUR', 'PLN', 'USD')
+
+API_HOST = '0.0.0.0'
+API_PORT = 8080
+
+EXCHANGE_RATE_UPDATE_FREQUENCY = 60 * 60 * 24  # in sec
+
+SQLITE_PARAMS = {
+    'NAME': 'rates.db'
+}
