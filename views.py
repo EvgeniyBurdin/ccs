@@ -28,7 +28,12 @@ async def calc(request) -> web.json_response:
             "'%s' currency not available!" % query_currency,
             status=422
         )
-    query_summ = float(request.match_info.get('summ'))
+
+    query_summ = request.match_info.get('summ')
+    try:
+        query_summ = float(query_summ)
+    except ValueError:
+        return web.json_response("'%s' not summ!" % query_summ, status=422)
 
     result = {
         currency: calc_currency_summ(
