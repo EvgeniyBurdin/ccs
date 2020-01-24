@@ -19,6 +19,10 @@ class DataManager:
         self._rates_info: Optional[RatesInfo] = None
 
     async def updater(self) -> NoReturn:
+        """
+            Сопрограмма периодического обновления курсов
+            Интервал обновления хранится в self.update_frequency
+        """
         while True:
             await asyncio.sleep(self.update_frequency)
             await self.update_rates_info()
