@@ -122,6 +122,9 @@ class EcbRatesSource(AbstractRatesSource):
 
 
 class FakeRatesSource(EcbRatesSource):
+    """
+        Класс для тестирования (не используется в работе сервера)
+    """
     async def _request(self) -> str:
         return '''<Cube>
                 <Cube time="2019-12-13">
